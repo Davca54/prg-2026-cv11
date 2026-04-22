@@ -15,14 +15,23 @@ def selection_sort(sekvence):
     return sekvence
 
 
+def bubble_sort(sekvence):
+    sekvence = sekvence[:]
+    n = len(sekvence)
+    for it in range(n - 1):
+        for idx in range(n - 1 - it):
+            if sekvence[idx] > sekvence[idx + 1]:
+                sekvence[idx], sekvence[idx + 1] = sekvence[idx + 1], sekvence[idx]
+    return sekvence
 
 
-    return  sekvence
 
 
 def main():
     sekvence = random_numbers(count = 20, low = 0, high=100)
-    sorted_sekvence = selection_sort(sekvence)
-    print(sorted_sekvence)
+    sorted_sekvence_selection = selection_sort(sekvence)
+    bubble_sorted = bubble_sort(sekvence)
+    print(sorted_sekvence_selection)
+    print(bubble_sorted)
 if __name__ == "__main__":
     main()
